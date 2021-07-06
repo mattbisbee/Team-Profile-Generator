@@ -89,7 +89,7 @@ const employeeInfo = employeeData => {
       type: 'list',
       name: 'role',
       message: "Select the role the employee has:",
-      choices: ['Manager', 'Engineer', 'Intern', 'Team Member']
+      choices: ['Manager', 'Engineer', 'Intern']
     }
   ])
   .then(answers => {
