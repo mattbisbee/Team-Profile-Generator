@@ -19,7 +19,7 @@ test('Puts in a role for the employee', () => {
 });
 
 test('Puts in a school name for the Intern', () => {
-  const school = "engineerMatt@github.com";
-  const intern = new Intern('Matt', '1484', 'Matt@test.com', 'Intern', school);
-  expect(intern.school).toBe(school);
+  const School = "engineerMatt@github.com";
+  const intern = new Intern('Matt', '1484', 'Matt@test.com', 'Intern', School);
+  expect(intern.School).toBe(School);
 });
