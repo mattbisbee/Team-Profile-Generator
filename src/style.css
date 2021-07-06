@@ -1,5 +1,5 @@
 body{
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(60, 60, 60);
 }
 .navbar-header {
   float: left;
@@ -12,14 +12,14 @@ body{
   font-size: 48px;}
 
 .navbar{
-  background: rgb(255,0,0);
-  color: rgb(255, 255, 255);
+  background: rgb(150, 150, 150);
+  color: rgb(255, 165, 0);
 }
 
-.card{
+/* .card{
   margin: 20px;
   padding: 0;
-}
+} */
 
 
 

@@ -125,10 +125,6 @@ function employeeInfo() {
         entireTeam.push(internStaff);
         addMore();
       })
-    } else {
-      const employeeStaff = new Employee (answers.name, answers.id, answers.email, answers.role);
-      entireTeam.push(employeeStaff);
-      addMore();
     }
 
     function addMore() {
