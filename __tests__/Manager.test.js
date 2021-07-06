@@ -20,8 +20,8 @@ test('Puts in a role for the employee', () => {
 });
 
 test('Puts in an office number for the manager', () => {
-  const officeNumber = "A302";
-  const manager = new Manager('Matt', '1484', 'Matt@test.com', 'Manager', officeNumber);
-  expect(manager.officeNumber).toBe(officeNumber);
+  const office = "A302";
+  const manager = new Manager('Matt', '1484', 'Matt@test.com', 'Manager', office);
+  expect(manager.office).toBe(office);
 });
 

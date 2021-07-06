@@ -5,7 +5,7 @@ function writeHTML (html) {
         if(err){
             throw err
         }
-        console.log("HTML page has been generated!")
+        console.log("Your new Team Profile has been Generated! Check the 'dist' folder to view!")
         copyCSS()
     })
 }
@@ -15,7 +15,6 @@ const copyCSS = () =>{
         if (err){
             throw err
         }
-        console.log('The stylesheet has been copied!')
     });
 }
 

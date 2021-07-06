@@ -9,26 +9,6 @@ const Engineer = require("./lib/Engineer")
 const Manager = require("./lib/Manager")
 const Intern = require("./lib/Intern")
 
-
-// const promptTeamName = () => {
-//   return inquirer.prompt([
-
-//     {
-//       type: 'input',
-//       name: 'teamname',
-//       message: 'What is the name of your team?',
-//       validate: teamNameInput => {
-//         if (teamNameInput) {
-//           return true;
-//         } else {
-//           console.log('Please enter a team name!');
-//           return false;
-//         }
-//       }
-//     },
-//   ]);
-// }
-
 const entireTeam = []
 
 function employeeInfo() {
@@ -47,6 +27,19 @@ function employeeInfo() {
       }
     },
 
+    {
+      type: 'input',
+      name: 'id',
+      message: 'What is the ID number of this employee? (Required)',
+      validate: idInput => {
+        if (idInput) {
+          return true;
+        } else {
+          console.log('An employee ID is required!');
+          return false;
+        }
+      }
+    },
     
     {
       type: 'input',
@@ -61,20 +54,7 @@ function employeeInfo() {
         }
       }
     },
-    
-    {
-      type: 'input',
-      name: 'id',
-      message: 'What is the ID number of this employee? (Required)',
-      validate: idInput => {
-        if (idInput) {
-          return true;
-        } else {
-          console.log('An employee ID is required!');
-          return false;
-        }
-      }
-    },
+
 
     {
       type: 'list',
@@ -88,7 +68,7 @@ function employeeInfo() {
       inquirer.prompt([
         {
           type: 'input',
-          name: 'officeNumber',
+          name: 'office',
           message: 'Enter the Manager\'s office number. (Required)',
           validate: numData => {
             if(numData) {
@@ -100,7 +80,7 @@ function employeeInfo() {
         }
       ])
       .then(response => {
-        const managerStaff = new Manager (answers.name, answers.email, answers.id, answers.role, response.officeNumber)
+        const managerStaff = new Manager (answers.name, answers.id, answers.email, answers.role, response.office)
         entireTeam.push(managerStaff);
         addMore();
       })
@@ -109,7 +89,7 @@ function employeeInfo() {
       inquirer.prompt ([
         {
           type: 'input',
-          name: 'github',
+          name: 'gitHub',
           message: 'Please enter a GitHub username. (Required)',
           validate: gitHubData => {
             if (gitHubData) {
@@ -121,7 +101,7 @@ function employeeInfo() {
         }
       ])
       .then(response => {
-        const engineerStaff = new Engineer (answers.name, answers.email, answers.id, answers.role, response.github)
+        const engineerStaff = new Engineer (answers.name, answers.id, answers.email, answers.role, response.gitHub)
         entireTeam.push(engineerStaff);
         addMore();
       })
@@ -141,12 +121,12 @@ function employeeInfo() {
         }
       ])
       .then(response => {
-        const internStaff = new Intern (answers.name, answers.email, answers.id, answers.role, response.school)
+        const internStaff = new Intern (answers.name, answers.id, answers.email, answers.role, response.school)
         entireTeam.push(internStaff);
         addMore();
       })
     } else {
-      const employeeStaff = new Employee (answers.name, answers.email, answers.id, answers.role);
+      const employeeStaff = new Employee (answers.name, answers.id, answers.email, answers.role);
       entireTeam.push(employeeStaff);
       addMore();
     }
