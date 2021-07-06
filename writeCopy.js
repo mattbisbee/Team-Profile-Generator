@@ -5,7 +5,7 @@ function writeHTML (html) {
         if(err){
             throw err
         }
-        console.log("Your new Team Profile has been Generated! Check the 'dist' folder to view!")
+        console.log("Your new Team Profile is ready to view in the 'dist' folder!")
         copyCSS()
     })
 }

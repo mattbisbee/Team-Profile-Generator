@@ -14,9 +14,6 @@ let formHTML = employeeCards => {
       } else if (optionKey === 'gitHub'){
           optionalStat = (`GitHub : <a href='https://www.github.com/${employeeCards[i].gitHub}' target='_blank'> ${employeeCards[i].gitHub}</a>`)
       }
-      else{
-          console.log(optionalStat)
-      }
 
       let {name, id, email, role} = employeeCards[i]
       cardArea+= 
